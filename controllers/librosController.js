@@ -6,7 +6,7 @@ module.exports = {
 
         libro.obtener(con, function (err, datos) {
             console.log(datos);
-            res.render('libros/index', { title: 'Aplicación' });
+            res.render('libros/index', { title: 'Aplicación', libros:datos });
 
         });
 
