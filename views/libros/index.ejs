@@ -23,14 +23,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td></td>
-                <td>Editar | Borrar</td>
-            </tr>
+            <% for( let libro=0; libro < libros.length; libro++ ) { %>
+
+                <tr>
+                    <td>
+                        <%libros[libro].id%>
+                    </td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td></td>
+                    <td>Editar | Borrar</td>
+                </tr>
+
+                <% } %>
+
+
         </tbody>
     </table>
 </body>
