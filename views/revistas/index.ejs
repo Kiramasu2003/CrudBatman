@@ -20,18 +20,34 @@
 
                 <tr>
                     <td>
-                        <%revistas[revista].id%>
+                        <%=revistas[revista].id%>
                     </td>
                     <td>
-                        <%revistas[revista].editorial%>
+                        <%=revistas[revista].editorial%>
                     </td>
                     <td>
-                        <%revistas[revista].fecha%>
+                        <%=revistas[revista].fecha%>
                     </td>
                     <td>
-                        <%revistas[revista].genero%>
+                        <%=revistas[revista].genero%>
                     </td>
-                    <td>Editar | Borrar</td>
+                    <td>
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get"
+                                action="/revistas/editar/<%=revistas[revista].id %> ">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                        </div> |
+
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="post"
+                                action="/revistas/eliminar/<%=revistas[revista].id %> ">
+                                <button class="btn btn-danger" type="submit">Borrar</button>
+                            </form>
+                        </div>
+
+
+                    </td>
                 </tr>
 
                 <% } %>
