@@ -4,7 +4,7 @@ const librosController = require('../controllers/librosController');
 const revistasController = require('../controllers/revistasController');
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.send("Bienvenido a la biblioteca");
+    res.redirect('/libros');
 });
 
 module.exports = router;
