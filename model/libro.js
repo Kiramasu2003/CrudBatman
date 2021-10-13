@@ -17,7 +17,7 @@ module.exports = {
     },
     actualizar: function (con, datos, funcion) {
         con.query("UPDATE libros SET titulo=?, autor=?, editar=?"
-            + "\n  WHERE id = ?", [datos.titulo, datos.autor, datos.editorial, datos.id], funcion);
+            + "  WHERE id = ?", [datos.titulo, datos.autor, datos.editorial, datos.id], funcion);
     }
 
 
