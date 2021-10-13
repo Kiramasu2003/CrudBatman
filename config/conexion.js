@@ -1,20 +1,13 @@
-const mysql = require('mysql');
-const con = mysql.createConnection({
+const { createPool } = require('mysql');
+const con = createPool({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b4c0ab79565dbb',
     password: '2a755a35',
-    database: 'heroku_aba1e06667d7fbf'
+    database: 'heroku_aba1e06667d7fbf',
+    connectionLimit: 10
 });
 
-con.connect(
-    (err) => {
-        if (!err) {
-            console.log('Conexión establecida')
-        }
-        else {
-            console.log('Error de conexion: ' + err.name + ' : ' + err.message);
-        }
-    }
-);
 
+
+console.log('APP is Running');
 module.exports = con;
