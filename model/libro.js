@@ -1,12 +1,12 @@
 module.exports = {
-    obtener: function (conexion, funcion) {
+    obtener: function (con, funcion) {
 
-        conexion.query("SELECT * FROM libros", funcion)
+        con.query("SELECT * FROM libros;", funcion)
 
     },
-    insertar: function (conexion, datos, funcion) {
+    insertar: function (con, datos, funcion) {
 
-        conexion.query("INSERT INTO libros (titulo, autor, editorial) VALUES(?, ?, ?)", [datos.nombre, datos.autor, datos.editorial], funcion)
+        con.query("INSERT INTO libros (titulo, autor, editorial) VALUES(?, ?, ?);", [datos.titulo, datos.autor, datos.editorial], funcion)
 
     }
 
