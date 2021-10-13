@@ -34,6 +34,7 @@ module.exports = {
         })
     },
     editar: function (req, res) {
+        console.log()
         libro.retornarDatosID(con, req.params.id, function (err, registros) {
             console.log(registros[0]);
             res.render('libros/editar', { libro: registros[0] });
