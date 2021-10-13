@@ -40,6 +40,7 @@ function handleDisconnect() {
     });
 }
 
-handleDisconnect();
+const con1 = handleDisconnect();
 
+module.exports = con1;
 module.exports = con;
