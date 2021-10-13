@@ -1,10 +1,10 @@
-const con = require('../config/conexion');
+const con1 = require('../config/conexion');
 const revista = require('../model/revista');
 module.exports = {
 
     index: function (req, res) {
 
-        revista.obtener(con, function (err, datos) {
+        revista.obtener(con1, function (err, datos) {
             console.log(datos);
             res.render('revistas/index', { title: 'Aplicación', revistas: datos });
 
@@ -17,7 +17,7 @@ module.exports = {
     guardar: function (req, res) {
         console.log(req.body);
 
-        revista.insertar(con, req.body, function (err) {
+        revista.insertar(con1, req.body, function (err) {
             res.redirect('/revistas');
         });
 
@@ -25,16 +25,16 @@ module.exports = {
     eliminar: function (req, res) {
         console.log('Recepción de datos');
         console.log(req.params.id);
-        revista.retornarDatosID(con, req.params.id, function (err, registros) {
+        revista.retornarDatosID(con1, req.params.id, function (err, registros) {
 
-            revista.borrar(con, req.params.id, function (err) {
+            revista.borrar(con1, req.params.id, function (err) {
                 res.redirect('/revistas');
             })
 
         })
     },
     editar: function (req, res) {
-        revista.retornarDatosID(con, req.params.id, function (err, registros) {
+        revista.retornarDatosID(con1, req.params.id, function (err, registros) {
             console.log(registros[0]);
             res.render('revistas/editar', { revista: registros[0] });
         });
@@ -45,7 +45,7 @@ module.exports = {
         console.log(req.body.genero);
 
         if (req.body.editorial && req.body.fecha && req.body.genero) {
-            revista.actualizar(con, req.body, function (err) {
+            revista.actualizar(con1, req.body, function (err) {
             });
         }
         res.redirect('/revistas');
