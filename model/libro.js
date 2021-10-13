@@ -16,7 +16,7 @@ module.exports = {
         con.query("DELETE FROM libros WHERE id = ?", [id], funcion);
     },
     actualizar: function (con, datos, funcion) {
-        con.query("UPDATE libros SET titulo=?, autor=?, editar=?"
+        con.query("UPDATE libros SET titulo=?, autor=?, editorial=?"
             + "  WHERE id = ?", [datos.titulo, datos.autor, datos.editorial, datos.id], funcion);
     }
 
