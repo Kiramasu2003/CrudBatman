@@ -5,5 +5,7 @@ const librosController = require('../controllers/librosController.js');
 router.get('/', librosController.index);
 router.get('/crear', librosController.crear);
 router.post('/', librosController.guardar);
-
+router.post('/eliminar/:id', librosController.eliminar);
+router.get('/editar/:id', librosController.editar);
+router.post('/actualizar', librosController.actualizar);
 module.exports = router;

@@ -1,13 +1,24 @@
 module.exports = {
-    obtener: function (conexion, funcion) {
+    obtener: function (con, funcion) {
 
-        conexion.query("SELECT * FROM libros", funcion)
+        con.query("SELECT * FROM libros;", funcion)
 
     },
-    insertar: function (conexion, datos, funcion) {
+    insertar: function (con, datos, funcion) {
 
-        conexion.query("INSERT INTO libros (titulo, autor, editorial) VALUES(?, ?, ?)", [datos.nombre, datos.autor, datos.editorial], funcion)
+        con.query("INSERT INTO libros (titulo, autor, editorial) VALUES(?, ?, ?);", [datos.titulo, datos.autor, datos.editorial], funcion)
 
+    },
+    retornarDatosID: function (con, id, funcion) {
+        con.query("SELECT * FROM libros WHERE id = ?", [id], funcion);
+    },
+    borrar: function (con, id, funcion) {
+        con.query("DELETE FROM libros WHERE id = ?", [id], funcion);
+    },
+    actualizar: function (con, datos, funcion) {
+        con.query("UPDATE libros SET titulo=?, autor=?, editar=?"
+            + "\n  WHERE id = ?", [datos.titulo, datos.autor, datos.editorial, datos.id], funcion);
     }
+
 
 }

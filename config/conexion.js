@@ -12,8 +12,9 @@ con.connect(
             console.log('Conexión establecida')
         }
         else {
-            console.log('Error de conexion ' + err.message + ' : ' + err.code + ' ' + err.name);
+            console.log('Error de conexion: ' + err.name + ' : ' + err.message);
         }
     }
 );
+
 module.exports = con;
