@@ -1,5 +1,5 @@
 const con1 = require('../config/conexion');
-const libro = require('../model/libro');
+const libro = require('../model/user');
 module.exports = {
 
     index: function (req, res) {
